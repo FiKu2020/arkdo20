@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Salon kosmetyczny</title>
+    <link rel="stylesheet" href="styl7.css" />
+  </head>
+  <body>
+    <section class="first-left">
+      <h2>Nasza oferta</h2>
+      <ol>
+        <li>
+          <a href="twarz.html">Oczyszczanie twarzy</a>
+          <ul>
+            <li>Peeling</li>
+            <li>Maska</li>
+          </ul>
+        </li>
+        <li>Masaż</li>
+        <li>Makijaż</li>
+      </ol>
+      <a href="index.html">Strona główna</a>
+    </section>
+
+    <section class="second-left">
+      <img src="obraz1.jpg" alt="Personel" />
+    </section>
+
+    <section class="first-right">
+      <h1>Usługi kosmetyczne</h1>
+    </section>
+
+    <section class="second-right">
+      <h3>Kalkulator ceny wizyty</h3>
+      <input type="checkbox" name="temp" id="Peeling" value="45" />
+      <label for="Peeling">Peeling</label>
+      <input type="checkbox" name="temp" id="Maska" value="30" />
+      <label for="Maska">Maska</label>
+      <input type="checkbox" name="temp" id="Masaz" value="20" />
+      <label for="Masaz">Masaż twarzy</label>
+      <input type="checkbox" name="temp" id="Makijaz" value="50" />
+      <label for="Makijaz">Makijaż</label>
+      <button onclick="Calculate()">Oblicz cenę</button>
+      <span id="wylicz-cena"></span>
+    </section>
+
+    <footer>
+      <p>Autor: 06272500572</p>
+    </footer>
+    <script>
+      function Calculate() {
+        const wartPeeling = document.getElementById("Peeling");
+        const wartMaska = document.getElementById("Maska");
+        const wartMasaz = document.getElementById("Masaz");
+        const wartMakijaz = document.getElementById("Makijaz");
+        const doWpis = document.getElementById("wylicz-cena");
+        var suma = 0;
+        if (wartPeeling.checked) {
+          suma += parseInt(wartPeeling.value);
+        }
+        if (wartMaska.checked) {
+          suma += parseInt(wartMaska.value);
+        }
+        if (wartMasaz.checked) {
+          suma += parseInt(wartMasaz.value);
+        }
+        if (wartMakijaz.checked) {
+          suma += parseInt(wartMakijaz.value);
+        }
+        doWpis.innerHTML = `Cena zabiegów: ${suma}`;
+      }
+    </script>
+  </body>
+</html>
