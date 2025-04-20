@@ -1,0 +1,7 @@
+select nazwaPliku,podpis from zdjecia ORDER BY podpis asc
+
+select cel , dataWyjazdu from wycieczki where dostepna = 0;
+
+select cel, dataWyjazdu ,Z.podpis from wycieczki W join zdjecia Z on W.id = Z.id where W.cena > 1300;
+
+drop table uzytkownik;
